@@ -1,0 +1,1787 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+    <link href="images/favicon.ico" rel="icon" type="image/ico" />
+  </head>
+
+  <body class="index" data-languages="[]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo.png" class="logo" alt="Logo" />
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+          </li>
+          <li>
+            <a href="#headers" class="toc-h1 toc-link" data-title="Headers">Headers</a>
+          </li>
+          <li>
+            <a href="#uri" class="toc-h1 toc-link" data-title="URI">URI</a>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
+          <li>
+            <a href="#data-units" class="toc-h1 toc-link" data-title="Data Units">Data Units</a>
+          </li>
+          <li>
+            <a href="#iot-devices" class="toc-h1 toc-link" data-title="Devices">Devices</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#list-devices" class="toc-h2 toc-link" data-title="List Devices">List Devices</a>
+                  </li>
+                  <li>
+                    <a href="#get-device" class="toc-h2 toc-link" data-title="Get Device">Get Device</a>
+                  </li>
+                  <li>
+                    <a href="#register-device" class="toc-h2 toc-link" data-title="Register Device">Register Device</a>
+                  </li>
+                  <li>
+                    <a href="#update-device" class="toc-h2 toc-link" data-title="Update Device">Update Device</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#iot-devices-alarms" class="toc-h1 toc-link" data-title="Devices Alarms">Devices Alarms</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#list-device-specific-alarms" class="toc-h2 toc-link" data-title="List Device Specific Alarms">List Device Specific Alarms</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#iot-devices-gps" class="toc-h1 toc-link" data-title="Devices GPS">Devices GPS</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#list-devices-39-gps" class="toc-h2 toc-link" data-title="List Devices' GPS">List Devices' GPS</a>
+                  </li>
+                  <li>
+                    <a href="#get-device-specific-gps-data" class="toc-h2 toc-link" data-title="Get Device Specific GPS Data">Get Device Specific GPS Data</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#iot-devices-events" class="toc-h1 toc-link" data-title="Devices Events">Devices Events</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-device-specific-events-data" class="toc-h2 toc-link" data-title="Get Device Specific Events data">Get Device Specific Events data</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#iot-devices-temperature-sensors" class="toc-h1 toc-link" data-title="Devices Temperature Sensors">Devices Temperature Sensors</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-device-specific-temperature-sensors-data" class="toc-h2 toc-link" data-title="Get Device Specific Temperature Sensors Data">Get Device Specific Temperature Sensors Data</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#iot-devices-health-sensors" class="toc-h1 toc-link" data-title="Devices Health Sensors">Devices Health Sensors</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-device-specific-health-sensors-data" class="toc-h2 toc-link" data-title="Get Device Specific Health Sensors Data">Get Device Specific Health Sensors Data</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#iot-devices-initializations" class="toc-h1 toc-link" data-title="Devices Initializations">Devices Initializations</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-device-specific-initialization-data" class="toc-h2 toc-link" data-title="Get Device Specific Initialization Data">Get Device Specific Initialization Data</a>
+                  </li>
+                  <li>
+                    <a href="#get-specific-initialization-data" class="toc-h2 toc-link" data-title="Get Specific Initialization Data">Get Specific Initialization Data</a>
+                  </li>
+                  <li>
+                    <a href="#set-alarm-initialization" class="toc-h2 toc-link" data-title="Set Alarm Initialization">Set Alarm Initialization</a>
+                  </li>
+                  <li>
+                    <a href="#set-unit-control-initialization" class="toc-h2 toc-link" data-title="Set Unit Control Initialization">Set Unit Control Initialization</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#resource-definitions" class="toc-h1 toc-link" data-title="Resource Definitions">Resource Definitions</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#devices" class="toc-h2 toc-link" data-title="Devices">Devices</a>
+                  </li>
+                  <li>
+                    <a href="#devices-alarms" class="toc-h2 toc-link" data-title="Devices Alarms">Devices Alarms</a>
+                  </li>
+                  <li>
+                    <a href="#devices-gps" class="toc-h2 toc-link" data-title="Devices GPS">Devices GPS</a>
+                  </li>
+                  <li>
+                    <a href="#devices-events" class="toc-h2 toc-link" data-title="Devices Events">Devices Events</a>
+                  </li>
+                  <li>
+                    <a href="#devices-temperature-sensors" class="toc-h2 toc-link" data-title="Devices Temperature Sensors">Devices Temperature Sensors</a>
+                  </li>
+                  <li>
+                    <a href="#devices-health-sensors" class="toc-h2 toc-link" data-title="Devices Health Sensors">Devices Health Sensors</a>
+                  </li>
+                  <li>
+                    <a href="#devices-initializations" class="toc-h2 toc-link" data-title="Devices Initializations">Devices Initializations</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='https://tritrackers.com/register'>Sign Up for a Developer Key</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome to the TriTrackers API. You can securely access your TriTrackers resources using traditional HTTP requests. Content uploaded to TriTrackers will be validated for integrity so that you can be sure we got every last bit.</p>
+
+<p>TriTrackers API is organized around REST and uses HTTP verbs and response codes that most clients are familiar with. All requests must be formatted as <code>Content-Type: application/json</code>. All responses are also formatted JSON, encoded in the UTF-8 character encoding (<code>Content-Type: application/json; charset=utf-8</code>).</p>
+<h1 id='authentication'>Authentication</h1>
+<p>This API uses OAuth2 authentication. Please contact support to request a developer API key.</p>
+
+<p>Once supplied, the API key must be provided to all requests like follows.</p>
+
+<p><code>Authorization: Bearer API_KEY_HERE</code></p>
+
+<p>The bearer token is your key to accessing all of your resources via the TriTrackers API. Keep it safe.</p>
+<h1 id='headers'>Headers</h1>
+<p>Make sure you have the following content type headers are set on every request:</p>
+
+<p><code>Accept: application/json</code> <code>Content-Type: application/json</code></p>
+<h1 id='uri'>URI</h1>
+<p>TriTrackers API is hosted on the following base URI:</p>
+
+<p><code>https://tritrackers.com/api/v1</code></p>
+<h1 id='errors'>Errors</h1>
+<p>TriTrackers uses conventional HTTP response codes to indicate the success or failure of an API request. The table below contains a summary of the typical response codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Everything was ok.</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Bad Request -- Your request is invalid.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized -- Your API key is wrong.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden -- The resource requested is disabled.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found -- The specified resource or endpoint could not be found.</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed.</td>
+</tr>
+<tr>
+<td>422</td>
+<td>The payload has missing required parameters or invalid data was given.</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests.</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error -- Request failed due to an internal error in TriTrackers.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable -- TriTrackers is temporarily offline for maintenance.</td>
+</tr>
+</tbody></table>
+<h1 id='data-units'>Data Units</h1>
+<p>Temperature data by default is displayed in Celsius. This can be updated to Fahrenheit through TriTrackers's user settings.</p>
+
+<p>Speed and distance data are displayed in kilometers per hour and kilometers respectively. This can be updated to miles per hours and miles respectively through your TriTracker's user settings.</p>
+<h1 id='iot-devices'>Devices</h1><h2 id='list-devices'>List Devices</h2>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"devices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dl5001232-abc"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DL5001232 - ABC"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"logger"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"vehicle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mercedes Sprinter"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"dates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-15T22:00:00-08:00"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"max"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-15T23:59:59-08:00"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"gps"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"dataLastReceivedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-15T22:17:34-08:00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"registeredAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-11T10:57:34-08:00"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dl5001247-xyz"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DL5001247 - XYZ"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"logger"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"vehicle"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"dates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-15T22:00:00-08:00"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"max"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-15T23:59:59-08:00"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"gps"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"dataLastReceivedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-15T22:23:01-08:00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"registeredAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-15T14:23:01-08:00"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all of your devices.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET /devices</code></p>
+<h2 id='get-device'>Get Device</h2>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"device"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dl5001247-xyz"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DL5001247 - XYZ"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"logger"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"vehicle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mercedes Sprinter"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"dates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-15T22:00:00-08:00"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"max"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-15T23:59:59-08:00"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"gps"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"dataLastReceivedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-15T22:23:01-08:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"registeredAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-15T14:23:01-08:00"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves a specific device.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET /devices/{id}</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>true</td>
+<td>Device ID</td>
+</tr>
+</tbody></table>
+<h2 id='register-device'>Register Device</h2>
+<blockquote>
+<p>Payload</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="s2">"display_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DL5001247 - XYZ"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"device_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"9a812xdf2"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"device"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dl5001247-xyz"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DL5001247 - XYZ"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"logger"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"vehicle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mercedes Sprinter"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"dates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-15T22:00:00-08:00"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"max"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-15T23:59:59-08:00"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"gps"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"dataLastReceivedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-15T22:23:01-08:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"registeredAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-15T14:23:01-08:00"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint register a new device to your account.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST /devices</code></p>
+<h3 id='body-parameters'>Body Parameters</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>display_name</td>
+<td>string</td>
+<td>true</td>
+<td>Name to be given to the device</td>
+</tr>
+<tr>
+<td>device_id</td>
+<td>string</td>
+<td>true</td>
+<td>ID that was provided upon purchase of the IoT device</td>
+</tr>
+</tbody></table>
+<h2 id='update-device'>Update Device</h2>
+<blockquote>
+<p>Payload</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"display_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New Device Display Name"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"vehicle_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">193</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"device"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dl5001247-xyz"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New Device Display Name"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"logger"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"vehicle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ford Transit"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"dates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-15T22:00:00-08:00"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"max"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-15T23:59:59-08:00"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"gps"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"dataLastReceivedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-15T22:23:01-08:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"registeredAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-15T14:23:01-08:00"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint updates your device.</p>
+<h3 id='http-request-4'>HTTP Request</h3><h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>true</td>
+<td>Device ID</td>
+</tr>
+</tbody></table>
+
+<p><code>PATCH /devices/{id}</code></p>
+<h3 id='body-parameters-2'>Body Parameters</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>display_name</td>
+<td>string</td>
+<td>true</td>
+<td>Name to be given to the device</td>
+</tr>
+<tr>
+<td>vehicle_id</td>
+<td>integer</td>
+<td>false</td>
+<td>Vehicle ID that should be assigned to the device</td>
+</tr>
+</tbody></table>
+<h1 id='iot-devices-alarms'>Devices Alarms</h1><h2 id='list-device-specific-alarms'>List Device Specific Alarms</h2>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"alarms"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">137</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Box Temperature Zone 0"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Box Temperature Zone 0 : 0 °C"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">49.05</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-123.06</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0 °C"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"range"</span><span class="p">:</span><span class="w"> </span><span class="s2">"out"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"currentSettings"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-11T09:30:03-08:00"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">158</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"System Voltage"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"System Voltage : 11.5 V"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">49.05</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-123.06</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11.5 V"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"range"</span><span class="p">:</span><span class="w"> </span><span class="s2">"out"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"currentSettings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-07T14:11:33-08:00"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all of a specific devices alarms that have been triggered.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET /devices/{id}/alarms</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>true</td>
+<td>Device ID</td>
+</tr>
+</tbody></table>
+<h1 id='iot-devices-gps'>Devices GPS</h1><h2 id='list-devices-39-gps'>List Devices&#39; GPS</h2>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"gpsDevices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dl5001247-abc"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DL5001247 - ABC"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"logger"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"latestData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.05</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">118.24</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"systemVoltage"</span><span class="p">:</span><span class="w"> </span><span class="mf">13.3</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"ambientTemperature"</span><span class="p">:</span><span class="w"> </span><span class="mf">9.9</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"boxTemperature"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.1</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-11T17:57:00-08:00"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dl5001247-xyz"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DL5001247 - XYZ"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"logger"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"latestData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">49.16</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">123.07</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"systemVoltage"</span><span class="p">:</span><span class="w"> </span><span class="mf">13.2</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"ambientTemperature"</span><span class="p">:</span><span class="w"> </span><span class="mf">13.7</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"boxTemperature"</span><span class="p">:</span><span class="w"> </span><span class="mf">12.8</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-15T20:23:00-08:00"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all of your devices&#39; most recent GPS data.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET /devices/gps/current</code></p>
+<h2 id='get-device-specific-gps-data'>Get Device Specific GPS Data</h2>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">49.18</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-122.96</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"speed"</span><span class="p">:</span><span class="w"> </span><span class="mf">68.5</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-10T07:12:00-08:00"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">49.16</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-122.94</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"speed"</span><span class="p">:</span><span class="w"> </span><span class="mi">72</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-10T07:14:00-08:00"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"statistics"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-10T07:14:00-08:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"totalDistance"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"averageSpeed"</span><span class="p">:</span><span class="w"> </span><span class="mf">70.25</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"numberOfDoorOpenings"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"numberOfStops"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all of a specific device&#39;s GPS data for a given datetime range.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET /devices/{id}/gps?start_date={start_date}&amp;end_date={end_date}</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>true</td>
+<td>Device ID</td>
+</tr>
+<tr>
+<td>start_date</td>
+<td>string</td>
+<td>true</td>
+<td>UNIX Epoch time to begin retrieving GPS data by. This must be within twenty four hours of the end_date.</td>
+</tr>
+<tr>
+<td>end_date</td>
+<td>string</td>
+<td>true</td>
+<td>UNIX Epoch time to stop retrieving GPS data by. This must be within twenty four hours of the start_date.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+To view and convert ISO8601 strings to UNIX Epoch time, reference <code><a href="https://www.infobyip.com/epochtimeconverter.php/">Epoch Time Converter</a></code> or a similar tool.
+For example, <code>2019-01-10T08:13:00-08:00</code> converts to <code>1547136780</code> (seconds since epoch)
+</aside>
+<h1 id='iot-devices-events'>Devices Events</h1><h2 id='get-device-specific-events-data'>Get Device Specific Events data</h2>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"events"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">49.16</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">123.07</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"duration"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3 minutes"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-14T16:00:00-08:00"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">49.16</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">123.07</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"duration"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63 minutes"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-15T05:00:00-08:00"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"door-openings"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all of a specific device&#39;s events data for a given datetime range.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET /devices/{id}/events/{event_name}?start_date={start_date}&amp;end_date={end_date}</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>true</td>
+<td>Device ID</td>
+</tr>
+<tr>
+<td>event_name</td>
+<td>string</td>
+<td>true</td>
+<td>Event name to retrieve data for. This must be either <code>stops</code> or <code>door-openings</code></td>
+</tr>
+<tr>
+<td>start_date</td>
+<td>string</td>
+<td>true</td>
+<td>UNIX Epoch time to begin retrieving events data by. This must be within twenty four hours of the end_date.</td>
+</tr>
+<tr>
+<td>end_date</td>
+<td>string</td>
+<td>true</td>
+<td>UNIX Epoch time to stop retrieving events data by. This must be within twenty four hours of the start_date.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+To view and convert ISO8601 strings to UNIX Epoch time, reference <code><a href="https://www.infobyip.com/epochtimeconverter.php/">Epoch Time Converter</a></code> or a similar tool.
+For example, <code>2019-01-10T08:13:00-08:00</code> converts to <code>1547136780</code> (seconds since epoch)
+</aside>
+<h1 id='iot-devices-temperature-sensors'>Devices Temperature Sensors</h1><h2 id='get-device-specific-temperature-sensors-data'>Get Device Specific Temperature Sensors data</h2>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"ambientTemperature"</span><span class="p">:</span><span class="w"> </span><span class="mf">47.66</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"box1Temperature"</span><span class="p">:</span><span class="w"> </span><span class="mf">50.54</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"box2Temperature"</span><span class="p">:</span><span class="w"> </span><span class="mf">50.72</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"evaporatorTemperature"</span><span class="p">:</span><span class="w"> </span><span class="mf">49.64</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"gps"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">49.05</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-123.06</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"speed"</span><span class="p">:</span><span class="w"> </span><span class="mf">74.3</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-10T08:03:00-08:00"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"ambientTemperature"</span><span class="p">:</span><span class="w"> </span><span class="mf">47.48</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"box1Temperature"</span><span class="p">:</span><span class="w"> </span><span class="mf">51.26</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"box2Temperature"</span><span class="p">:</span><span class="w"> </span><span class="mf">52.52</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"evaporatorTemperature"</span><span class="p">:</span><span class="w"> </span><span class="mf">49.82</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"gps"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">49.09</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-122.93</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"speed"</span><span class="p">:</span><span class="w"> </span><span class="mf">87.4</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-10T08:13:00-08:00"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"ambientTemperature"</span><span class="p">:</span><span class="w"> </span><span class="mf">48.2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"box1Temperature"</span><span class="p">:</span><span class="w"> </span><span class="mf">51.98</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"box2Temperature"</span><span class="p">:</span><span class="w"> </span><span class="mf">53.96</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"evaporatorTemperature"</span><span class="p">:</span><span class="w"> </span><span class="mf">50.72</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"gps"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">49.05</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-122.8</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"speed"</span><span class="p">:</span><span class="w"> </span><span class="mf">43.3</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-10T08:23:00-08:00"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all of a specific device&#39;s temperature sensors data for a given datetime range.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET /devices/{id}/data/temperature?start_date={start_date}&amp;end_date={end_date}</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>true</td>
+<td>Device ID</td>
+</tr>
+<tr>
+<td>start_date</td>
+<td>string</td>
+<td>true</td>
+<td>UNIX Epoch time to begin retrieving events data by. This must be within twenty four hours of the end_date.</td>
+</tr>
+<tr>
+<td>end_date</td>
+<td>string</td>
+<td>true</td>
+<td>UNIX Epoch time to stop retrieving events data by. This must be within twenty four hours of the start_date.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+To view and convert ISO8601 strings to UNIX Epoch time, reference <code><a href="https://www.infobyip.com/epochtimeconverter.php/">Epoch Time Converter</a></code> or a similar tool.
+For example, <code>2019-01-10T08:13:00-08:00</code> converts to <code>1547136780</code> (seconds since epoch)
+</aside>
+<h1 id='iot-devices-health-sensors'>Devices Health Sensors</h1><h2 id='get-device-specific-health-sensors-data'>Get Device Specific Health Sensors Data</h2>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"systemVoltage"</span><span class="p">:</span><span class="w"> </span><span class="mf">13.1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"runTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"current1"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.4</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"current2"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"current3"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"current4"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"pressure"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"gps"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">49.05</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-123.06</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"speed"</span><span class="p">:</span><span class="w"> </span><span class="mf">74.3</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-10T08:03:00-08:00"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"systemVoltage"</span><span class="p">:</span><span class="w"> </span><span class="mf">13.1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"runTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"current1"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.3</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"current2"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"current3"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"current4"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"pressure"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"gps"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">49.09</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-122.93</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"speed"</span><span class="p">:</span><span class="w"> </span><span class="mf">87.4</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-10T08:13:00-08:00"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"systemVoltage"</span><span class="p">:</span><span class="w"> </span><span class="mf">13.1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"runTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"current1"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.4</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"current2"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"current3"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"current4"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"pressure"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"gps"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">49.05</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-122.8</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"speed"</span><span class="p">:</span><span class="w"> </span><span class="mf">43.3</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-10T08:23:00-08:00"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all of a specific device&#39;s health sensors data for a given datetime range.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET /devices/{id}/data/health?start_date={start_date}&amp;end_date={end_date}</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>true</td>
+<td>Device ID</td>
+</tr>
+<tr>
+<td>start_date</td>
+<td>string</td>
+<td>true</td>
+<td>UNIX Epoch time to begin retrieving events data by. This must be within twenty four hours of the end_date.</td>
+</tr>
+<tr>
+<td>end_date</td>
+<td>string</td>
+<td>true</td>
+<td>UNIX Epoch time to stop retrieving events data by. This must be within twenty four hours of the start_date.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+To view and convert ISO8601 strings to UNIX Epoch time, reference <code><a href="https://www.infobyip.com/epochtimeconverter.php/">Epoch Time Converter</a></code> or a similar tool.
+For example, <code>2019-01-10T08:13:00-08:00</code> converts to <code>1547136780</code> (seconds since epoch)
+</aside>
+<h1 id='iot-devices-initializations'>Devices Initializations</h1><h2 id='get-device-specific-initialization-data'>Get Device Specific Initialization Data</h2>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"initializations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">207</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alarm"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"system_voltage"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"zone"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+             </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Processed"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"lastSetAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-06T13:05:55-08:00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"lastProcessedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-06T13:05:55-08:00"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">231</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"control"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unit_control"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"zone"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cooling"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"temperature"</span><span class="p">:</span><span class="w"> </span><span class="mi">-20</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Processed"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"lastSetAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-10T09:05:55-08:00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"lastProcessedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-10T09:05:55-08:00"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all of a specific device&#39;s initializations data.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET /devices/{id}/initializations</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>true</td>
+<td>Device ID</td>
+</tr>
+</tbody></table>
+<h2 id='get-specific-initialization-data'>Get Specific Initialization Data</h2>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"initialization"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">207</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"control"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unit_control"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"zone"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cooling"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"temperature"</span><span class="p">:</span><span class="w"> </span><span class="mi">-20</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Processed"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lastSetAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-06T13:05:55-08:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lastProcessedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-06T13:05:55-08:00"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves a device&#39;s specific initialization.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET devices/{id}/initializations/{initialization_id}</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>true</td>
+<td>Device ID</td>
+</tr>
+<tr>
+<td>initialization_id</td>
+<td>string</td>
+<td>true</td>
+<td>Initialization ID</td>
+</tr>
+</tbody></table>
+<h2 id='set-alarm-initialization'>Set Alarm Initialization</h2>
+<blockquote>
+<p>Payload</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"box_temperature"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"state"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"zone"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"min"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">-20</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"max"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"initialization"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">240</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alarm"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"box_temperature"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"zone"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">-20</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pending"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lastSetAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-12T13:05:55-08:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lastProcessedAt"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint sets a device alarm initialization.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST /devices/{id}/initialization</code></p>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>true</td>
+<td>Device ID</td>
+</tr>
+</tbody></table>
+<h3 id='body-parameters'>Body Parameters</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>true</td>
+<td>Name of the initialization to set (system_voltage or box_temperature)</td>
+</tr>
+<tr>
+<td>state</td>
+<td>boolean</td>
+<td>true</td>
+<td>Represents whether or not the initialization is toggled on or off</td>
+</tr>
+<tr>
+<td>zone</td>
+<td>integer</td>
+<td>with box_temperature</td>
+<td>Zone to set the alarm for (0 or 1)</td>
+</tr>
+<tr>
+<td>min</td>
+<td>float</td>
+<td>true</td>
+<td>Minimum value of the alarm range.</td>
+</tr>
+<tr>
+<td>max</td>
+<td>float</td>
+<td>true</td>
+<td>Maximum value of the alarm range.</td>
+</tr>
+</tbody></table>
+<h2 id='set-unit-control-initialization'>Set Unit Control Initialization</h2>
+<blockquote>
+<p>Payload</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unit_control"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"state"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"zone"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"mode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"cooling"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"temperature"</span><span class="p">:</span><span class="w"> </span><span class="mi">-20</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"initialization"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">207</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"control"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unit_control"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"zone"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cooling"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"temperature"</span><span class="p">:</span><span class="w"> </span><span class="mi">-20</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Processed"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lastSetAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-06T13:05:55-08:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lastProcessedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-06T13:05:55-08:00"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint sets a device unit control initialization.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>POST /devices/{id}/initialization</code></p>
+<h3 id='url-parameters-4'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>true</td>
+<td>Device ID</td>
+</tr>
+</tbody></table>
+<h3 id='body-parameters-2'>Body Parameters</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>true</td>
+<td>Name of the initialization to set (unit_control)</td>
+</tr>
+<tr>
+<td>state</td>
+<td>boolean</td>
+<td>true</td>
+<td>Represents whether or not the initialization is toggled on or off</td>
+</tr>
+<tr>
+<td>zone</td>
+<td>integer</td>
+<td>with box_temperature</td>
+<td>Zone to set the alarm for (0 or 1)</td>
+</tr>
+<tr>
+<td>mode</td>
+<td>string</td>
+<td>true</td>
+<td>Represents whether the control is for heating or cooling.</td>
+</tr>
+<tr>
+<td>temperature</td>
+<td>float</td>
+<td>true</td>
+<td>Temperature to set.</td>
+</tr>
+</tbody></table>
+<h1 id='resource-definitions'>Resource Definitions</h1><h2 id='devices'>Devices</h2>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>Device ID</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Device name</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>Device type. Includes logger, single_controller and dual_controller</td>
+</tr>
+<tr>
+<td>vehicle</td>
+<td>string</td>
+<td>Vehicle name that the device is attached to</td>
+</tr>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>Indicates whether the device is active or inactive</td>
+</tr>
+<tr>
+<td>dates.min</td>
+<td>string</td>
+<td>Datetime the device available to query data from</td>
+</tr>
+<tr>
+<td>dates.max</td>
+<td>string</td>
+<td>Datetime the device is available to query data to</td>
+</tr>
+<tr>
+<td>settings.gps</td>
+<td>boolean</td>
+<td>Indicates whether the device has gps enabled or disabled</td>
+</tr>
+<tr>
+<td>dataLastReceivedAt</td>
+<td>string</td>
+<td>Last datetime data was recorded at</td>
+</tr>
+<tr>
+<td>registeredAt</td>
+<td>string</td>
+<td>Datetime the device was attached to the user&#39;s account</td>
+</tr>
+</tbody></table>
+<h2 id='devices-alarms'>Devices Alarms</h2>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>Alarm ID</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Alarm name. Includes system_voltage and box_temperature</td>
+</tr>
+<tr>
+<td>type</td>
+<td>integer</td>
+<td>Denotes the alarm name and range. 0 and 1 are system voltage (in and out of range), 2 and 3 are box temperature zone 0 (in and out of range), 4 and 5 are box temperature zone 1 (in and out of range)</td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>Alarm name and corresponding value</td>
+</tr>
+<tr>
+<td>latitude</td>
+<td>float</td>
+<td>Latitude the alarm occurred at</td>
+</tr>
+<tr>
+<td>longitude</td>
+<td>float</td>
+<td>Longitude the alarm occurred at</td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>Float and measurement the alarm occurred at</td>
+</tr>
+<tr>
+<td>range</td>
+<td>string</td>
+<td>Indicates if the alarm came in our out of range</td>
+</tr>
+<tr>
+<td>currentSettings.max</td>
+<td>float</td>
+<td>Maximum range for the alarm</td>
+</tr>
+<tr>
+<td>currentSettings.min</td>
+<td>float</td>
+<td>Minimum range for the alarm</td>
+</tr>
+<tr>
+<td>currentSettings.state</td>
+<td>boolean</td>
+<td>Indicates whether the alarm is on or off, where true is on and false is off</td>
+</tr>
+</tbody></table>
+<h2 id='devices-gps'>Devices GPS</h2><h3 id='list-devices-39-gps'>List Devices&#39; GPS</h3>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>Device ID</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Device name</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>Device type. Includes logger, single_controller and dual_controller</td>
+</tr>
+<tr>
+<td>latestData.coordinates.latitude</td>
+<td>float</td>
+<td>Device&#39;s latest latitude</td>
+</tr>
+<tr>
+<td>latestData.coordinates.longitude</td>
+<td>float</td>
+<td>Device&#39;s latest longitude</td>
+</tr>
+<tr>
+<td>latestData.systemVoltage</td>
+<td>float</td>
+<td>System voltage of the reefer unit</td>
+</tr>
+<tr>
+<td>latestData.ambientTemperature</td>
+<td>float</td>
+<td>Ambient temperature of the reefer unit</td>
+</tr>
+<tr>
+<td>latestData.boxTemperature</td>
+<td>float</td>
+<td>Temperature of the reefer unit&#39;s box</td>
+</tr>
+<tr>
+<td>latestData.timestamp</td>
+<td>string</td>
+<td>Last datetime data was recorded at</td>
+</tr>
+</tbody></table>
+<h3 id='get-device-specific-gps-data'>Get Device Specific GPS Data</h3>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>Device ID</td>
+</tr>
+<tr>
+<td>coordinates.latitude</td>
+<td>float</td>
+<td>Latitude for the specified timestamp</td>
+</tr>
+<tr>
+<td>coordinates.longitude</td>
+<td>float</td>
+<td>Longitude for the specified timestamp</td>
+</tr>
+<tr>
+<td>speed</td>
+<td>float</td>
+<td>Speed in kilometers per hour at the specified timestamp</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>string</td>
+<td>Datetime the data was recorded at</td>
+</tr>
+<tr>
+<td>statistics.time</td>
+<td>string</td>
+<td>Last datetime data recorded at for all of the given GPS data in the datetime range</td>
+</tr>
+<tr>
+<td>statistics.totalDistance</td>
+<td>float</td>
+<td>Total distance travelled in kilometers</td>
+</tr>
+<tr>
+<td>statistics.average</td>
+<td>float</td>
+<td>Average speed in kilometers per hour</td>
+</tr>
+<tr>
+<td>statistics.numberOfDoorOpenings</td>
+<td>integer</td>
+<td>Number of times the reefer unit&#39;s door was opened</td>
+</tr>
+<tr>
+<td>statistics.numberOfStops</td>
+<td>integer</td>
+<td>Number of times the vehicle stopped</td>
+</tr>
+</tbody></table>
+<h2 id='devices-events'>Devices Events</h2>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Name of the event. Includes door-openings and stops</td>
+</tr>
+<tr>
+<td>latitude</td>
+<td>float</td>
+<td>Latitude for the specified timestamp</td>
+</tr>
+<tr>
+<td>longitude</td>
+<td>float</td>
+<td>Longitude for the specified timestamp the alarm occurred at</td>
+</tr>
+<tr>
+<td>duration</td>
+<td>string</td>
+<td>Length of the event in minutes</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>string</td>
+<td>Datetime the data was recorded at</td>
+</tr>
+</tbody></table>
+<h2 id='devices-temperature-sensors'>Devices Temperature Sensors</h2>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ambientTemperature</td>
+<td>float</td>
+<td>Ambient temperature of the reefer unit</td>
+</tr>
+<tr>
+<td>box1Temperature</td>
+<td>float</td>
+<td>Temperature of the back (by the door) of the reefer unit&#39;s box</td>
+</tr>
+<tr>
+<td>box2Temperature</td>
+<td>float</td>
+<td>Temperature of the front (by the cab) of the reefer unit&#39;s box</td>
+</tr>
+<tr>
+<td>evaporatorTemperature</td>
+<td>float</td>
+<td>Temperature of the reefer unit&#39;s evaporator</td>
+</tr>
+<tr>
+<td>gps.latitude</td>
+<td>float</td>
+<td>Latitude for the specified timestamp</td>
+</tr>
+<tr>
+<td>gps.longitude</td>
+<td>float</td>
+<td>Longitude for the specified timestamp</td>
+</tr>
+<tr>
+<td>gps.duration</td>
+<td>string</td>
+<td>Length of the event in minutes</td>
+</tr>
+<tr>
+<td>speed</td>
+<td>float</td>
+<td>Speed in kilometers per hour at the specified timestamp</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>string</td>
+<td>Datetime the data was recorded at</td>
+</tr>
+</tbody></table>
+<h2 id='devices-health-sensors'>Devices Health Sensors</h2>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>systemVoltage</td>
+<td>float</td>
+<td>System Voltage of the reefer unit</td>
+</tr>
+<tr>
+<td>runTime</td>
+<td>float</td>
+<td>Voltage Counter of the reefer unit</td>
+</tr>
+<tr>
+<td>current1</td>
+<td>float</td>
+<td>Current1 of the reefer unit</td>
+</tr>
+<tr>
+<td>current2</td>
+<td>float</td>
+<td>Current2 of the reefer unit</td>
+</tr>
+<tr>
+<td>current3</td>
+<td>float</td>
+<td>Current3 of the reefer unit</td>
+</tr>
+<tr>
+<td>current4</td>
+<td>float</td>
+<td>Current4 of the reefer unit</td>
+</tr>
+<tr>
+<td>pressure</td>
+<td>float</td>
+<td>Pressure of the reefer unit</td>
+</tr>
+<tr>
+<td>gps.latitude</td>
+<td>float</td>
+<td>Latitude for the specified timestamp</td>
+</tr>
+<tr>
+<td>gps.longitude</td>
+<td>float</td>
+<td>Longitude for the specified timestamp</td>
+</tr>
+<tr>
+<td>gps.speed</td>
+<td>float</td>
+<td>Speed in kilometers per hour at the specified timestamp</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>string</td>
+<td>Datetime the data was recorded at</td>
+</tr>
+</tbody></table>
+<h2 id='devices-initializations'>Devices Initializations</h2>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>Initialization ID</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>Initialization type. Includes alarm and control.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Name of the initialization. Includes system_voltage, box_temperature and unit_control</td>
+</tr>
+<tr>
+<td>settings.zone</td>
+<td>integer</td>
+<td>Zone to set an initialization (box_temperature and unit_control) for. Includes 0 and 1. 0 being the back of the reefer unit (by the door), 1 being the front of the reefer unit (by the cab)</td>
+</tr>
+<tr>
+<td>settings.state</td>
+<td>boolean</td>
+<td>Indicates whether to turn an initialization on or off, where true is on and false is off</td>
+</tr>
+<tr>
+<td>settings.mode</td>
+<td>string</td>
+<td>Represents whether the control is for heating or cooling.</td>
+</tr>
+<tr>
+<td>settings.temperature</td>
+<td>float</td>
+<td>Temperature to set a control initialization at</td>
+</tr>
+<tr>
+<td>settings.max</td>
+<td>float</td>
+<td>Maximum range for an alarm initialization</td>
+</tr>
+<tr>
+<td>settings.min</td>
+<td>float</td>
+<td>Minimum range for an alarm initialization</td>
+</tr>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>Indicates if the initialization was success or not. Includes Processed and Pending</td>
+</tr>
+<tr>
+<td>lastSetAt</td>
+<td>string</td>
+<td>Datetime the initialization was last set at</td>
+</tr>
+<tr>
+<td>lastProcessedAt</td>
+<td>string</td>
+<td>Datetime the initialization was last processed at (successfully set)</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+      </div>
+    </div>
+  </body>
+</html>
